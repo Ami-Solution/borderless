@@ -1,0 +1,12 @@
+<FormControl
+                name={name}
+                onChange={onChange}
+                componentClass="select"
+                placeholder="select"
+                defaultValue={defaultValue}>
+                {tokens.map((token) => (
+                    <option key={token.symbol} value={token.symbol}>
+                        {`${token.symbol} (${token.name})`}
+                    </option>
+                ))}
+            </FormControl>

@@ -1,0 +1,29 @@
+<Navbar>
+                <Navbar.Header>
+                    <Navbar.Brand>Dharma Relayer</Navbar.Brand>
+                </Navbar.Header>
+
+                <Nav>
+                    <LinkContainer to="/" exact={true}>
+                        <NavItem>Browse</NavItem>
+                    </LinkContainer>
+
+                    <LinkContainer to="/create">
+                        <NavItem>Create</NavItem>
+                    </LinkContainer>
+
+                    <LinkContainer to="/tokens">
+                        <NavItem>Tokens</NavItem>
+                    </LinkContainer>
+
+                    <LinkContainer to="/investments">
+                        <NavItem>Investments</NavItem>
+                    </LinkContainer>
+                    
+
+                    <LinkContainer to="/borderless">
+                        <NavItem>Borderless</NavItem>
+                    </LinkContainer>
+
+                </Nav>
+            </Navbar>

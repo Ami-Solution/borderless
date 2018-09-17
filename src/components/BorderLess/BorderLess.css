@@ -1,0 +1,12 @@
+.main_container {
+
+    font-family: Arapey,Cardo,serif;
+    background-color: azure;
+    font-size: 3em;
+    padding: 3em;
+}
+
+.main_container span {
+    /* display: inline-block !important; */
+
+}
