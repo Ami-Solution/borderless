@@ -1,6 +1,8 @@
 const jsonServer = require("json-server");
 const path = require("path");
 
+const { addStandardRelayerApi } = require("./standardRelayerApi");
+
 // NOTE: This should change to the network that you're wanting to deploy against.
 const network = process.env.NETWORK || "local";
 
@@ -19,7 +21,7 @@ const middlewares = jsonServer.defaults({
  * This is where you put your address to start receiving fees.
  * @type {string}
  */
-const RELAYER_ADDRESS = "0xca54c3123c855bceceb0db69b034e45530020f26";
+const RELAYER_ADDRESS = "0x0000000000000000000000000000000000000001";
 
 /**
  * This is an example of a way to set a fee amount per order filled.
@@ -35,11 +37,11 @@ server.use(middlewares);
  * @param loanData
  */
 const getFee = (loanData) => {
-   const principalAmount = parseFloat(loanData.principalAmount);
+    const principalAmount = parseFloat(loanData.principalAmount);
 
-   if (!principalAmount) {
-       return 0;
-   }
+    if (!principalAmount) {
+        return 0;
+    }
 
     // In this example we return a fee of 5% of the principal amount, rounded down to 2 decimals.
     const totalFee = (principalAmount / 100) * FEE_PERCENT;
@@ -64,6 +66,8 @@ server.use((req, res, next) => {
     // Continue to JSON Server router
     next();
 });
+
+addStandardRelayerApi(server, router);
 
 server.use(router);
 server.listen(process.env.PORT || 8000, () => {

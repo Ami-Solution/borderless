@@ -7,6 +7,7 @@ import "./AuthorizableAction.css";
 class AuthorizableAction extends Component {
     handleClick(event, callback) {
         event.preventDefault();
+
         callback();
     }
 
@@ -26,7 +27,7 @@ class AuthorizableAction extends Component {
                 <Button
                     onClick={(event) => this.handleClick(event, onAction)}
                     disabled={!canTakeAction}
-                    bsStyle="default"
+                    bsStyle="primary"
                     className="AuthorizableAction-Action">
                     {this.props.children}
                 </Button>
