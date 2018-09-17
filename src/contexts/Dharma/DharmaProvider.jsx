@@ -34,8 +34,8 @@ class DharmaProvider extends Component {
     }
 
     componentDidMount() {
-        //this.getUserTokens();
-        //this.getSupportedTokens();
+        this.getUserTokens();
+        this.getSupportedTokens();
     }
 
     getSupportedTokens() {

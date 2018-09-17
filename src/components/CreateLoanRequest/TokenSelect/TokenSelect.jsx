@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Dropdown } from 'semantic-ui-react';
+import { Dropdown, Popup, Button, Grid  } from 'semantic-ui-react';
 import 'semantic-ui-css/semantic.min.css';
 
 const friendOptions = [
@@ -25,13 +25,31 @@ class TokenSelect extends Component {
         
         const { name, onChange, defaultValue, tokens } = this.props;
 
+        console.log('Tockens :', this.props);
+
         return (
             <div>
-                <Dropdown 
-                    placeholder='Choose tocken' 
-                        closeOnBlur 
-                        selection options={friendOptions} 
-                    />        
+
+                <Popup wide trigger={<Button content='Are you the one?' />} on='click'>
+                        <Grid divided columns='1'>
+                        <Grid.Column>
+                        <Dropdown 
+                                placeholder='Choose tocken' 
+                                closeOnBlur 
+                                selection options={friendOptions} 
+                            />        
+                        </Grid.Column>
+                        <Grid.Column>
+                            <Popup
+                            trigger={<Button color='green' content='Red Pill' fluid />}
+                                content='Stay in Wonderland, and I show you how deep the rabbit hole goes.'
+                                position='top center'
+                                size='tiny'
+                                inverted
+                            />
+                        </Grid.Column>
+                        </Grid>
+                    </Popup>
             </div>
         );
     }

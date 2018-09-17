@@ -10,9 +10,7 @@ class BorderLessRequest extends Component {
         return (
             <div className="main_container">
                 <Container fluid textAlign='center'>
-                    
                     <p>I want to borrow 100 &nbsp;
-
                             <Popup trigger={<a>DAI</a>} flowing hoverable>
                                 <Grid centered divided columns={3}>
                                     <Grid.Column textAlign='center'>
@@ -39,28 +37,10 @@ class BorderLessRequest extends Component {
                                 </Grid>
                             </Popup>
                     &nbsp;
-                     I will put in [100 REP] collateral for a one week period at a 10% interest rate. </p>
-
-                    <Popup wide trigger={<Button content='Are you the one?' />} on='click'>
-                        <Grid divided columns='1'>
-                        <Grid.Column>
-                            <TockenSelect />
-                        </Grid.Column>
-                        <Grid.Column>
-                            <Popup
-                            trigger={<Button color='green' content='Red Pill' fluid />}
-                                content='Stay in Wonderland, and I show you how deep the rabbit hole goes.'
-                                position='top center'
-                                size='tiny'
-                                inverted
-                            />
-                        </Grid.Column>
-                        </Grid>
-                    </Popup>
-
+                        I will put in [100 REP] collateral for a one week period at a 10% interest rate. </p>
+                     <TockenSelect />
                 </Container>
             </div>
-            
         );
     }
 }
